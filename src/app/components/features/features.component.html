@@ -1,0 +1,21 @@
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-12">Lo que incluye el Portal del Contribuyente</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let feature of features; let i = index" class="p-8 border rounded-lg hover:shadow-lg transition scroll-reveal" [style.animation-delay]="(i * 0.1) + 's'">
+        <div class="text-4xl mb-4 text-brand-primary">
+          <ng-container [ngSwitch]="feature.icon">
+            <lucide-icon *ngSwitchCase="'Box'" [img]="Box" class="w-10 h-10"></lucide-icon>
+            <lucide-icon *ngSwitchCase="'DollarSign'" [img]="DollarSign" class="w-10 h-10"></lucide-icon>
+            <lucide-icon *ngSwitchCase="'BarChart3'" [img]="BarChart3" class="w-10 h-10"></lucide-icon>
+            <lucide-icon *ngSwitchCase="'Smartphone'" [img]="Smartphone" class="w-10 h-10"></lucide-icon>
+            <lucide-icon *ngSwitchCase="'Lock'" [img]="Lock" class="w-10 h-10"></lucide-icon>
+            <lucide-icon *ngSwitchCase="'User'" [img]="User" class="w-10 h-10"></lucide-icon>
+          </ng-container>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
+        <p class="text-gray-600">{{ feature.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>

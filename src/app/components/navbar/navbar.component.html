@@ -1,0 +1,53 @@
+<nav class="sticky top-0 z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <div class="h-10 w-32 bg-gray-300 rounded flex items-center justify-center text-gray-600 text-sm font-semibold">
+          [LOGO CiviTEC]
+        </div>
+      </div>
+
+      <!-- Desktop menu -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-brand-primary px-3 py-2 text-sm font-medium">
+            Características
+          </button>
+          <button (click)="scrollToSection('modulos')" class="text-gray-700 hover:text-brand-primary px-3 py-2 text-sm font-medium">
+            Módulos
+          </button>
+          <button (click)="scrollToSection('beneficios')" class="text-gray-700 hover:text-brand-primary px-3 py-2 text-sm font-medium">
+            Beneficios
+          </button>
+          <button (click)="scrollToSection('contacto')" class="bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
+            Solicitar Demo
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" class="text-gray-700 hover:text-brand-primary">
+          <span class="text-2xl">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div *ngIf="mobileMenuOpen" class="md:hidden pb-4">
+      <button (click)="scrollToSection('features')" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium">
+        Características
+      </button>
+      <button (click)="scrollToSection('modulos')" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium">
+        Módulos
+      </button>
+      <button (click)="scrollToSection('beneficios')" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium">
+        Beneficios
+      </button>
+      <button (click)="scrollToSection('contacto')" class="block w-full mt-2 bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
+        Solicitar Demo
+      </button>
+    </div>
+  </div>
+</nav>
