@@ -2,45 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Scroll reveal animations */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.scroll-reveal {
-  opacity: 0;
-  animation: slideUp 0.6s ease-out forwards;
-}
-
-.scroll-reveal.visible {
-  animation: slideUp 0.6s ease-out;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Base styles */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll container */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-container section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Contacto section - 70% contacto, 30% footer */
+.scroll-container #contacto {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #1d8fa3;
+}
+
+#contacto app-contacto {
+  flex: 0 0 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#contacto app-contacto section {
+  background: transparent;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contacto app-footer {
+  flex: 0 0 30%;
+  background: #1a2332;
+  overflow: auto;
+}
+
+#contacto app-footer footer {
+  padding: 1rem 0 !important;
+}
+
+#contacto app-footer .grid {
+  gap: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#contacto app-footer .space-y-2 {
+  gap: 0.5rem !important;
 }
