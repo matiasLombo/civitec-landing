@@ -8,12 +8,35 @@
         </div>
         <span class="text-xl font-bold text-brand-primary">CiviTEC</span>
       </div>
-      <div class="hidden md:flex items-center space-x-8">
-        <a (click)="scrollToSection('modulos')" class="text-gray-700 hover:text-brand-primary cursor-pointer">Módulos</a>
-        <a (click)="scrollToSection('caracteristicas')" class="text-gray-700 hover:text-brand-primary cursor-pointer">Características</a>
-        <a (click)="scrollToSection('beneficios')" class="text-gray-700 hover:text-brand-primary cursor-pointer">Beneficios</a>
-        <a (click)="scrollToSection('contacto')" class="bg-brand-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 cursor-pointer">Contacto</a>
+      <div class="hidden md:flex items-center space-x-4">
+        <a (click)="scrollToSection('modulos')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Módulos</a>
+        <a (click)="scrollToSection('caracteristicas')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Características</a>
+        <a (click)="scrollToSection('beneficios')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Beneficios</a>
+        <a (click)="scrollToSection('contacto')" class="bg-brand-primary text-white px-4 py-2 rounded-lg hover:opacity-90 cursor-pointer transition">Contacto</a>
       </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" class="text-gray-700 hover:text-brand-primary">
+          <span class="text-2xl">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div *ngIf="mobileMenuOpen" class="md:hidden pb-4">
+      <a (click)="scrollToSection('modulos')" class="block w-full text-left px-4 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium cursor-pointer">
+        Módulos
+      </a>
+      <a (click)="scrollToSection('caracteristicas')" class="block w-full text-left px-4 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium cursor-pointer">
+        Características
+      </a>
+      <a (click)="scrollToSection('beneficios')" class="block w-full text-left px-4 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium cursor-pointer">
+        Beneficios
+      </a>
+      <a (click)="scrollToSection('contacto')" class="block w-full mt-2 bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 cursor-pointer transition">
+        Contacto
+      </a>
     </div>
   </div>
 </nav>

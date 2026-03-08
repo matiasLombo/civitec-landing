@@ -11,7 +11,14 @@ import { LucideAngularModule, Building2, FileText, Car, Store, Skull, Wallet, Ca
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
+  mobileMenuOpen = false;
+
   constructor(private router: Router) {}
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
   // Icons
   Building2 = Building2;
   FileText = FileText;
@@ -100,6 +107,7 @@ export class HomePageComponent {
   ];
 
   scrollToSection(id: string) {
+    this.mobileMenuOpen = false;
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
