@@ -1,0 +1,250 @@
+<!-- Navbar con botón volver -->
+<nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <button (click)="volver()" class="inline-flex items-center text-brand-primary hover:text-blue-700 font-semibold">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Volver a Módulos
+        </button>
+        <span class="ml-6 text-xl font-bold text-gray-900">{{ modulo.nombre }}</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-4">
+        <a (click)="scrollToSection('funcionalidades')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Funcionalidades</a>
+        <a (click)="scrollToSection('beneficios')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Beneficios</a>
+        <a (click)="scrollToSection('caracteristicas')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Características</a>
+        <a (click)="scrollToSection('contacto')" class="bg-brand-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contacto</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section del Módulo -->
+<section class="bg-gradient-to-r from-brand-primary to-blue-600 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="flex items-center mb-4">
+          <div class="bg-white/10 rounded-lg p-3 mr-4">
+            <lucide-icon *ngIf="modulo.icon === 'FileText'" [img]="FileText" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Car'" [img]="Car" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Building2'" [img]="Building2" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Store'" [img]="Store" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Wallet'" [img]="Wallet" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'CalculatorIcon'" [img]="CalculatorIcon" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Skull'" [img]="Skull" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Gavel'" [img]="Gavel" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'ShoppingCart'" [img]="ShoppingCart" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'HardHat'" [img]="HardHat" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Server'" [img]="Server" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Folder'" [img]="Folder" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'FileSignature'" [img]="FileSignature" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'IdCard'" [img]="IdCard" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Droplets'" [img]="Droplets" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Lightbulb'" [img]="Lightbulb" class="w-12 h-12"></lucide-icon>
+          </div>
+          <div>
+            <h1 class="text-5xl font-bold">{{ modulo.nombre }}</h1>
+            <p class="text-xl text-blue-100 mt-2">{{ modulo.subtitulo }}</p>
+          </div>
+        </div>
+        <p class="text-lg mb-8 text-blue-100 mt-6">
+          <span *ngIf="modulo.icon === 'FileText'">Solución completa para la gestión del impuesto inmobiliario municipal. Integración total con el módulo Catastro para administración eficiente de la recaudación.</span>
+          <span *ngIf="modulo.icon === 'Car'">Solución completa para la gestión del parque automotor municipal. Control total de expedientes, cuotas, boletas de pago y estados de deuda.</span>
+          <span *ngIf="modulo.icon === 'Building2'">Sistema integral de gestión catastral que centraliza la información de propiedades, propietarios y títulos inmobiliarios. Base fundamental para la administración tributaria municipal.</span>
+          <span *ngIf="modulo.icon === 'Store'">Gestión integral de cuentas corrientes asociadas a comercios. Control completo de contribuyentes, cuotas, comprobantes y distribución de boletas de pago.</span>
+          <span *ngIf="modulo.icon === 'Wallet'">Gestión completa de cobros y pagos municipales con control integral de recaudación, movimientos de caja y tesorería.</span>
+          <span *ngIf="modulo.icon === 'CalculatorIcon'">Sistema contable integral con plan de cuentas configurable, asientos automáticos, control bancario y centros de costos.</span>
+          <span *ngIf="modulo.icon === 'Skull'">Administración completa de cementerios municipales. Gestión de nichos, tumbas, cuentas corrientes y servicios funerarios.</span>
+          <span *ngIf="modulo.icon === 'Gavel'">Sistema integral para juzgados de faltas con control de actas, causas, fallos, resoluciones y gestión de cuentas corrientes por infracción.</span>
+          <span *ngIf="modulo.icon === 'ShoppingCart'">Control integral del ciclo de compras desde la solicitud hasta el pago. Gestión de pedidos, órdenes de compra, proveedores y cuentas corrientes.</span>
+          <span *ngIf="modulo.icon === 'HardHat'">Gestión completa de obras públicas con control de stock de materiales, planificación de obras en fases y atención de reclamos de contribuyentes.</span>
+          <span *ngIf="modulo.icon === 'Server'">Sistema integral para la gestión de todas las cuentas corrientes municipales con generación de cuotas, comprobantes y control completo de recaudación.</span>
+          <span *ngIf="modulo.icon === 'Folder'">Administración de convenios de pago y juicios para recuperación de cartera morosa. Gestión de planes de pago, cuotas y cobranzas con control total.</span>
+          <span *ngIf="modulo.icon === 'FileSignature'">Administración completa de tasas de alumbrado público con gestión de inmuebles, generación de cuotas, comprobantes y control integral de recaudación.</span>
+          <span *ngIf="modulo.icon === 'IdCard'">Gestión integral de tasas de higiene, profilaxis y seguridad para comercios. Control completo de cuentas corrientes y distribución de comprobantes.</span>
+          <span *ngIf="modulo.icon === 'Droplets'">Administración de carnets de conducir con control de vencimientos, emisión de comprobantes y gestión completa de contribuyentes.</span>
+          <span *ngIf="modulo.icon === 'Lightbulb'">Gestión integral de tasas y servicios municipales con administración de cuentas corrientes de inmuebles, generación de cuotas y control de recaudación.</span>
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button (click)="scrollToSection('funcionalidades')" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Ver Funcionalidades
+          </button>
+          <button (click)="scrollToSection('contacto')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition">
+            Solicitar Demo
+          </button>
+        </div>
+      </div>
+      <div class="bg-white/10 rounded-lg p-8 backdrop-blur-sm border border-white/20">
+        <h3 class="text-2xl font-bold mb-6">Resumen del Módulo</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span *ngIf="modulo.icon === 'FileText'">Integración con módulo Catastro</span>
+            <span *ngIf="modulo.icon === 'Car'">Generación automática de cuotas</span>
+            <span *ngIf="modulo.icon === 'Building2'">Gestión integral de propiedades</span>
+            <span *ngIf="modulo.icon === 'Store'">Cuentas corrientes por comercio</span>
+            <span *ngIf="modulo.icon === 'Wallet'">Control total de recaudación</span>
+            <span *ngIf="modulo.icon === 'CalculatorIcon'">Asientos automáticos multi-módulo</span>
+            <span *ngIf="modulo.icon === 'Skull'">Gestión de nichos y tumbas</span>
+            <span *ngIf="modulo.icon === 'Gavel'">Gestión integral de actas y causas</span>
+            <span *ngIf="modulo.icon === 'ShoppingCart'">Gestión integral del ciclo de compras</span>
+            <span *ngIf="modulo.icon === 'HardHat'">Control de stock y planificación</span>
+            <span *ngIf="modulo.icon === 'Server'">Gestión centralizada de cuentas</span>
+            <span *ngIf="modulo.icon === 'Folder'">Recuperación de cartera morosa</span>
+            <span *ngIf="modulo.icon === 'FileSignature'">Integración con Catastro</span>
+            <span *ngIf="modulo.icon === 'IdCard'">Gestión de comercios y actividades</span>
+            <span *ngIf="modulo.icon === 'Droplets'">Control de vencimientos</span>
+            <span *ngIf="modulo.icon === 'Lightbulb'">Integración con Catastro</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span *ngIf="modulo.icon === 'FileText'">Emisión de comprobantes</span>
+            <span *ngIf="modulo.icon === 'Car'">Distribución por email</span>
+            <span *ngIf="modulo.icon === 'Building2'">Control de títulos y propietarios</span>
+            <span *ngIf="modulo.icon === 'Store'">Generación automática de cuotas</span>
+            <span *ngIf="modulo.icon === 'Wallet'">Múltiples formas de pago</span>
+            <span *ngIf="modulo.icon === 'CalculatorIcon'">Control de libros bancos</span>
+            <span *ngIf="modulo.icon === 'Skull'">Sistema de cuotas anual</span>
+            <span *ngIf="modulo.icon === 'Gavel'">Comprobantes con cálculo de intereses</span>
+            <span *ngIf="modulo.icon === 'ShoppingCart'">Órdenes de compra y pago</span>
+            <span *ngIf="modulo.icon === 'HardHat'">Planificación de obras y reclamos</span>
+            <span *ngIf="modulo.icon === 'Server'">Generación masiva de comprobantes</span>
+            <span *ngIf="modulo.icon === 'Folder'">Planes de pago flexibles</span>
+            <span *ngIf="modulo.icon === 'FileSignature'">Generación masiva de cuotas</span>
+            <span *ngIf="modulo.icon === 'IdCard'">Generación automática de cuotas</span>
+            <span *ngIf="modulo.icon === 'Droplets'">Parte diario de carnets</span>
+            <span *ngIf="modulo.icon === 'Lightbulb'">Generación automática de cuotas</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span *ngIf="modulo.icon === 'FileText'">20+ informes prediseñados</span>
+            <span *ngIf="modulo.icon === 'Car'">Padrón de vehículos</span>
+            <span *ngIf="modulo.icon === 'Building2'">Auditoría completa de cambios</span>
+            <span *ngIf="modulo.icon === 'Store'">Certificados de libre deuda</span>
+            <span *ngIf="modulo.icon === 'Wallet'">Integración con contabilidad</span>
+            <span *ngIf="modulo.icon === 'CalculatorIcon'">Centros de costos y presupuestos</span>
+            <span *ngIf="modulo.icon === 'Skull'">Certificados de libre deuda</span>
+            <span *ngIf="modulo.icon === 'Gavel'">Integración con policía y contabilidad</span>
+            <span *ngIf="modulo.icon === 'ShoppingCart'">Control de estados y proveedores</span>
+            <span *ngIf="modulo.icon === 'HardHat'">Cronogramas diarios de actividades</span>
+            <span *ngIf="modulo.icon === 'Server'">Informes financieros integrales</span>
+            <span *ngIf="modulo.icon === 'Folder'">15+ tipos de informes</span>
+            <span *ngIf="modulo.icon === 'FileSignature'">Planes de descuento y deudores</span>
+            <span *ngIf="modulo.icon === 'IdCard'">Sistema de repartidores</span>
+            <span *ngIf="modulo.icon === 'Droplets'">Alertas de vencimiento</span>
+            <span *ngIf="modulo.icon === 'Lightbulb'">Integración con Tesorería</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Funcionalidades -->
+<section id="funcionalidades" class="bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Funcionalidades Principales</h2>
+      <p class="text-xl text-gray-600">Todo lo que necesita para administrar {{ modulo.nombre }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div *ngFor="let func of modulo.funcionalidades" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-brand-primary">
+        <div class="flex items-start">
+          <svg class="w-6 h-6 text-brand-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <p class="ml-4 text-gray-700">{{ func }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Beneficios -->
+<section id="beneficios" class="bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Beneficios para su Municipio</h2>
+      <p class="text-xl text-gray-600">Transforme la gestión de {{ modulo.nombre }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div *ngFor="let beneficio of modulo.beneficios" class="bg-gradient-to-br from-brand-primary/5 to-blue-600/5 p-8 rounded-lg border border-brand-primary/20">
+        <div class="flex items-start">
+          <div class="flex-shrink-0 bg-brand-primary rounded-lg p-3">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ beneficio.titulo }}</h3>
+            <p class="text-gray-600">{{ beneficio.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Características Técnicas -->
+<section id="caracteristicas" class="bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Características Técnicas</h2>
+      <p class="text-xl text-gray-600">Tecnología de punta aplicada a la gestión tributaria</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let carac of modulo.caracteristicas" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <div class="bg-brand-primary/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">{{ carac.titulo }}</h3>
+        <p class="text-gray-600 text-center text-sm">{{ carac.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="bg-brand-primary text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-bold mb-6">¿Interesado en este Módulo?</h2>
+    <p class="text-xl mb-8 text-blue-100">
+      Solicite una demostración personalizada del Módulo de {{ modulo.nombre }}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:contacto&#64;civitec.com.ar?subject=Demo%20Módulo%20{{ modulo.nombre }}" class="bg-white text-brand-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        Solicitar Demo
+      </a>
+      <button (click)="volver()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition inline-flex items-center justify-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Volver a Módulos
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer simplificado -->
+<footer class="bg-gray-900 text-gray-300 py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-sm">&copy; 2025 API Soft. Todos los derechos reservados.</p>
+  </div>
+</footer>

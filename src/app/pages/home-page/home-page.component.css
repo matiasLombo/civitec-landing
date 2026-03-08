@@ -1,0 +1,39 @@
+/* Home Page - Sistema Desktop CiviTEC */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegurar que el scroll funcione normalmente */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Resetear cualquier offset */
+html, body {
+  scroll-margin-top: 0 !important;
+  scroll-padding-top: 0 !important;
+}
+
+/* Section padding - compensate for fixed navbar (64px = 4rem) */
+section {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+/* First section (Hero) needs more top padding */
+section:first-of-type {
+  padding-top: 7rem;
+}
+
+/* Scroll margin solo para navegación con scrollToSection */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Sections can grow with content */
+section {
+  min-height: auto;
+}
