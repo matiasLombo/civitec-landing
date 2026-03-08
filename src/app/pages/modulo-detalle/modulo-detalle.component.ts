@@ -11,6 +11,12 @@ import { LucideAngularModule, FileText, Building2, Car, Store, KeyRound, Wallet,
   styleUrl: './modulo-detalle.component.css'
 })
 export class ModuloDetalleComponent implements OnInit {
+  mobileMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
   // Icons
   FileText = FileText;
   Building2 = Building2;
@@ -869,6 +875,7 @@ export class ModuloDetalleComponent implements OnInit {
   }
 
   scrollToSection(id: string) {
+    this.mobileMenuOpen = false;
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
