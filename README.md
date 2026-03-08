@@ -1,14 +1,21 @@
 # CiviTEC Landing Page
 
-Landing page B2B para comercializar CiviTEC — Portal del Contribuyente para municipios argentinos.
+Landing page B2B para comercializar CiviTEC — Sistema de Gestión Municipal Integral para municipios argentinos.
+
+## Descripción
+
+Este sitio presenta **dos productos diferenciados**:
+
+1. **CiviTEC Desktop** (ruta `/`): Sistema de escritorio completo con 18 módulos integrados para la gestión municipal integral
+2. **Portal del Contribuyente** (ruta `/portal`): Portal web para que los contribuyentes consulten sus deudas e informes online
 
 ## Stack Tecnológico
 
 - **Angular**: 20.x con componentes standalone
+- **Angular Router**: Para navegación entre páginas
 - **Tailwind CSS**: 3.4 para estilos utilitarios
-- **Feather Icons**: para iconografía
+- **Lucide Angular**: Para iconografía (reemplazo de Feather Icons)
 - **TypeScript**: lenguaje principal
-- **No router**: todo en una página con navegación por anclas
 
 ## Instalación Rápida
 
@@ -28,52 +35,59 @@ ng build --configuration production
 ```
 src/
 ├── app/
-│   ├── components/          # 13 componentes por sección
-│   │   ├── navbar/          # Barra de navegación sticky
-│   │   ├── hero/            # Sección principal
-│   │   ├── stats/           # 4 métricas clave
-│   │   ├── problema/        # Pain points
-│   │   ├── solucion/        # Propuesta de valor
-│   │   ├── features/        # 6 características
-│   │   ├── modulos/         # 8 módulos tributarios
-│   │   ├── como-funciona/   # 3 pasos
-│   │   ├── screenshots/     # Galería 2x2
-│   │   ├── beneficios/      # 4 beneficios municipales
-│   │   ├── cliente/         # Referencia Paso de los Libres
-│   │   ├── contacto/        # CTA: email + WhatsApp
-│   │   └── footer/          # Pie de página
-│   ├── app.component.*      # Contenedor principal
-│   └── app.config.ts
+│   ├── pages/               # Páginas principales
+│   │   ├── home-page/       # Landing principal (Sistema Desktop)
+│   │   └── portal-page/     # Portal del Contribuyente
+│   ├── components/          # Componentes reutilizables
+│   │   ├── navbar/          # Barra de navegación (Portal)
+│   │   ├── hero/            # Hero section (Portal)
+│   │   ├── solucion/        # Propuesta de valor (Portal)
+│   │   ├── features/        # Características (Portal)
+│   │   ├── como-funciona/   # Cómo funciona (Portal)
+│   │   ├── screenshots/     # Galería (Portal)
+│   │   ├── beneficios/      # Beneficios (Portal)
+│   │   ├── contacto/        # Contacto (Portal)
+│   │   └── footer/          # Pie de página (Portal)
+│   ├── app.routes.ts        # Configuración de rutas
+│   ├── app.component.*      # Contenedor principal con router-outlet
+│   └── app.config.ts        # Configuración con provideRouter
 ├── assets/
-│   ├── logo.png             # Logo CiviTEC (copiado de frontend)
+│   ├── logo.png             # Logo CiviTEC
 │   └── screenshots/         # Placeholders para reemplazar
-├── styles.css               # Tailwind + animaciones scroll-reveal
+├── styles.css               # Tailwind + estilos globales
 └── index.html
 ```
 
-## Secciones de la Página
+## Rutas Disponibles
 
-| Sección | Componente | Contenido |
-|---|---|---|
-| Navbar | `NavbarComponent` | Logo + links ancla + botón demo (responsive) |
-| Hero | `HeroComponent` | Headline + 2 botones CTA + screenshot placeholder |
-| Stats | `StatsComponent` | 4 métricas: 8 módulos, 24/7, 100%, 1 municipio |
-| Problema | `ProblemaComponent` | 3 pain points en tarjetas |
-| Solución | `SolucionComponent` | Descripción + screenshot login |
-| Características | `FeaturesComponent` | 6 tarjetas con emojis |
-| Módulos | `ModulosComponent` | Grid 8 módulos con iconografía |
-| Cómo Funciona | `ComoFuncionaComponent` | 3 pasos numerados |
-| Screenshots | `ScreenshotsComponent` | Galería 2x2 |
-| Beneficios | `BeneficiosComponent` | 4 beneficios para el municipio |
-| Cliente | `ClienteComponent` | Referencia Paso de los Libres |
-| Contacto | `ContactoComponent` | Botones email + WhatsApp |
-| Footer | `FooterComponent` | Links + copyright |
+### Ruta Principal (`/`) - CiviTEC Desktop
+
+Landing principal que presenta el **Sistema de Gestión Municipal Integral**:
+
+- **Hero**: Presentación del sistema desktop con 18 módulos
+- **Módulos**: Grid 3x6 con los 18 módulos del sistema (Catastro, Inmobiliario, Automotores, Comercio, THPS, TyS, TAP, TyC, JZF, GIP, CCV, Cementerio, Tesorería, Contabilidad, Compras, Obras Públicas, Servicios Varios, API CiviTEC)
+- **Características**: 6 features clave del sistema (Interfaz intuitiva, Informes personalizados, Seguridad integral, etc.)
+- **Beneficios**: 4 beneficios para municipios (Gestión integral, Aumento de recaudación, Transparencia, Escalabilidad)
+- **Contacto**: Email y WhatsApp
+
+### Ruta Portal (`/portal`) - Portal del Contribuyente
+
+Landing del producto complementario **Portal del Contribuyente** (contenido original):
+
+- Hero, Solución, Features, Beneficios, Cómo Funciona, Screenshots, Contacto
+
+> **Nota**: Esta ruta está funcional pero el acceso está oculto por defecto. Se puede acceder directamente mediante `/portal` hasta decidir si se incluye en la navegación principal.
 
 ## Navegación
 
-- **Desktop**: barra de navegación horizontal con links ancla
-- **Mobile**: hamburger menu con opciones deslizables
-- **Scroll suave**: todos los botones usan `scrollIntoView({ behavior: 'smooth' })`
+### Landing Principal (/)
+- **Navbar fijo**: Links de ancla a secciones (Módulos, Características, Beneficios, Contacto)
+- **Scroll suave**: Navegación con `scrollIntoView({ behavior: 'smooth' })`
+- **Responsive**: Diseño adaptativo para desktop, tablet y móvil
+
+### Portal del Contribuyente (/portal)
+- **Single Page**: Navegación por anclas con scroll-snap
+- **Barra de navegación**: Links a secciones internas
 
 ## Animaciones
 
@@ -171,16 +185,28 @@ ng build --configuration production
 # - polyfills-*.js
 ```
 
+## Módulos del Sistema CiviTEC
+
+Para información detallada sobre todos los módulos, consultar el archivo `/MODULOS_CIVITEC.md` en la raíz del proyecto.
+
+**Módulos principales:**
+- **Gestión Tributaria**: Catastro, Inmobiliario, Automotores, Comercio, THPS, TyS, TAP
+- **Administración**: Tesorería, Contabilidad, Compras, Obras Públicas
+- **Legales**: Juzgado de Faltas (JZF), Convenios y Juicios (GIP)
+- **Servicios**: Cementerio, Transporte y Carnet (TyC), Cuentas Corrientes Varias (CCV), Servicios Varios
+- **Integración**: API CiviTEC
+
 ## Checklist Pre-Publicación
 
 - [ ] Reemplazar todos los placeholders de imágenes
-- [ ] Actualizar email y WhatsApp de contacto
-- [ ] Verificar links de navegación funcionan
+- [ ] Actualizar email y WhatsApp de contacto reales
+- [ ] Verificar links de navegación funcionan en ambas rutas
 - [ ] Probar en mobile (375px, 768px, 1024px)
 - [ ] Verificar que todos los botones CTA funcionan
 - [ ] Test en navegadores: Chrome, Firefox, Safari, Edge
-- [ ] Revisar Core Web Vitals (Lighthouse)
+- [ ] Revisar Core Web Vitals (Lighthouse) para ambas rutas
 - [ ] Prueba de contacto: email y WhatsApp
+- [ ] Decidir si mostrar acceso a `/portal` en navegación o mantenerlo oculto
 
 ## Arquitectura de Componentes
 
