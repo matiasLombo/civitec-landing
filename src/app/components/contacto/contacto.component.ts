@@ -13,6 +13,6 @@ export class ContactoComponent {
   Mail = Mail;
   MessageCircle = MessageCircle;
 
-  emailLink = 'mailto:contacto@civitec.com.ar';
-  whatsappLink = 'https://wa.me/5493794000000';
+  // emailLink = 'mailto:contacto@civitec.com.ar';
+  whatsappLink = 'https://wa.me/5493772406593';
 }
