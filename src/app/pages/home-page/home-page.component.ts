@@ -44,7 +44,7 @@ export class HomePageComponent {
     { icon: 'FileText', nombre: 'Inmobiliario', slug: 'inmobiliario', descripcion: 'Tasa inmobiliaria' },
     { icon: 'Car', nombre: 'Automotores', slug: 'automotores', descripcion: 'Registro y tasa automotor' },
     { icon: 'Store', nombre: 'Comercio', slug: 'comercio', descripcion: 'Habilitación comercial' },
-    { icon: 'Droplets', nombre: 'THPS', slug: 'thps', descripcion: 'Higiene y Seguridad' },
+    { icon: 'Droplets', nombre: 'Tasa higiene profilaxis y seguridad', slug: 'thps', descripcion: 'Higiene y Seguridad' },
     { icon: 'Server', nombre: 'Tasas y Servicios', slug: 'tasas-servicios', descripcion: 'Tasas municipales variadas' },
     { icon: 'Lightbulb', nombre: 'Alumbrado Público', slug: 'alumbrado-publico', descripcion: 'Tasa de alumbrado' },
     { icon: 'IdCard', nombre: 'Transporte y Carnet', slug: 'transporte-carnet', descripcion: 'Carnets de conducir' },
@@ -56,8 +56,7 @@ export class HomePageComponent {
     { icon: 'CalculatorIcon', nombre: 'Contabilidad', slug: 'contabilidad', descripcion: 'Sistema contable completo' },
     { icon: 'ShoppingCart', nombre: 'Compras', slug: 'compras', descripcion: 'Adquisiciones municipales' },
     { icon: 'HardHat', nombre: 'Obras Públicas', slug: 'obras-publicas', descripcion: 'Control de obras' },
-    { icon: 'Zap', nombre: 'Servicios Varios', slug: 'servicios-varios', descripcion: 'Otros servicios municipales' },
-    { icon: 'Scale', nombre: 'API CiviTEC', slug: 'api-civitec', descripcion: 'Integración con sistemas externos' }
+    { icon: 'Zap', nombre: 'Servicios Varios', slug: 'servicios-varios', descripcion: 'Otros servicios municipales' }
   ];
 
   caracteristicas = [
@@ -67,15 +66,15 @@ export class HomePageComponent {
     },
     {
       titulo: 'Informes Personalizados',
-      descripcion: 'Generación de reportes en múltiples formatos: matricial, láser e inyección de tinta.'
+      descripcion: 'Generación de reportes en múltiples formatos: word, pdf, excel, texto e imagen.'
     },
     {
       titulo: 'Seguridad Integral',
-      descripcion: 'Autenticación local o Active Directory con auditoría completa de todas las operaciones.'
+      descripcion: 'Autenticación nativa o Active Directory con auditoría completa de todas las operaciones.'
     },
     {
       titulo: 'Copias Automatizadas',
-      descripcion: 'Sistema de backup programable para proteger todos los datos municipales.'
+      descripcion: 'Sistema de backup para proteger todos los datos municipales.'
     },
     {
       titulo: 'Archivos Históricos',
@@ -83,14 +82,14 @@ export class HomePageComponent {
     },
     {
       titulo: 'Alta Conectividad',
-      descripcion: 'Integración con email, web y API REST para conectar con otros sistemas.'
+      descripcion: 'Integración con email, web y API REST para conectar con otros sistemas (según requerimiento, presupuesto y cotización aparte).'
     }
   ];
 
   beneficios = [
     {
       titulo: 'Gestión Integral',
-      descripcion: 'Un solo sistema para administrar todas las áreas del municipio, desde tributación hasta obras públicas.'
+      descripcion: 'Un solo sistema para administrar todas las áreas del municipio.'
     },
     {
       titulo: 'Aumento de Recaudación',
@@ -102,7 +101,7 @@ export class HomePageComponent {
     },
     {
       titulo: 'Escalabilidad',
-      descripcion: 'Sistema modular que crece con las necesidades del municipio. Implementación por etapas.'
+      descripcion: 'Sistema modular que crece con las necesidades del municipio.'
     }
   ];
 
