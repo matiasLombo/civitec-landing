@@ -9,7 +9,6 @@
           </svg>
           Volver a Módulos
         </button>
-        <span class="ml-6 text-xl font-bold text-gray-900">{{ modulo.nombre }}</span>
       </div>
       <div class="hidden md:flex items-center space-x-4">
         <a (click)="scrollToSection('funcionalidades')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Funcionalidades</a>
@@ -249,12 +248,12 @@
       Solicite una demostración personalizada del Módulo de {{ modulo.nombre }}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:contacto&#64;civitec.com.ar?subject=Demo%20Módulo%20{{ modulo.nombre }}" class="bg-white text-brand-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
+      <!-- <a href="mailto:contacto&#64;civitec.com.ar?subject=Demo%20Módulo%20{{ modulo.nombre }}" class="bg-white text-brand-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
         Solicitar Demo
-      </a>
+      </a> -->
       <button (click)="volver()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition inline-flex items-center justify-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
