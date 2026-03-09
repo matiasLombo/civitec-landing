@@ -47,13 +47,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
         <h1 class="text-5xl font-bold mb-6">
-          Sistema de Gestión Municipal Integral
+          Gestión Municipal
         </h1>
         <p class="text-xl mb-4 text-blue-100">
           CiviTEC es la solución completa para administrar su municipio de forma eficiente y transparente.
         </p>
         <p class="text-lg mb-8 text-blue-100">
-          18 módulos integrados que cubren desde catastro y tributación hasta contabilidad, tesorería y obras públicas.
+          17 módulos integrados que cubren desde catastro y tributación hasta contabilidad, tesorería y obras públicas.
         </p>
         <div class="flex flex-wrap gap-4">
           <button (click)="scrollToSection('contacto')" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
@@ -121,7 +121,7 @@
 <section id="modulos" class="bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">18 Módulos Integrados</h2>
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">17 Módulos Integrados</h2>
       <p class="text-xl text-gray-600">Una solución completa para todas las áreas de su municipio</p>
     </div>
 
@@ -244,15 +244,14 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <h3 class="text-white font-semibold text-lg mb-4">CiviTEC</h3>
-        <p class="text-sm">Sistema de gestión municipal integral desarrollado por API Soft para municipios de Argentina.</p>
+        <p class="text-sm">Gestión municipal desarrollado por API Soft para municipios de Argentina.</p>
       </div>
       <div>
-        <h3 class="text-white font-semibold text-lg mb-4">Módulos Principales</h3>
+        <h3 class="text-white font-semibold text-lg mb-4">Módulos</h3>
         <ul class="text-sm space-y-2">
-          <li>Catastro e Inmobiliario</li>
-          <li>Automotores y Comercio</li>
-          <li>Contabilidad y Tesorería</li>
-          <li>Juzgado de Faltas</li>
+          <li *ngFor="let modulo of modulos">
+            <a [routerLink]="['/modulos', modulo.slug]" class="hover:text-white cursor-pointer transition">{{ modulo.nombre }}</a>
+          </li>
         </ul>
       </div>
       <div>
