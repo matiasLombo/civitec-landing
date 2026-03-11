@@ -97,22 +97,22 @@ export class HomePageComponent {
     {
       titulo: 'Gestión Integral',
       descripcion: 'Un solo sistema para administrar todas las áreas del municipio.',
-      imagen: 'modulos.png'
+      imagen: 'modulo.png'
     },
     {
       titulo: 'Aumento de Recaudación',
       descripcion: 'Control preciso de deudas, convenios y juicios para maximizar la recaudación municipal.',
-      imagen: 'informeCC.png'
+      imagen: 'infoCC.png'
     },
     {
       titulo: 'Transparencia Total',
       descripcion: 'Auditoría completa de todas las operaciones y acceso controlado por permisos de usuario.',
-      imagen: 'informeAuditoriaTecnica.png'
+      imagen: 'infoAuditoriaTecnica.png'
     },
     {
       titulo: 'Escalabilidad',
       descripcion: 'Sistema modular que crece con las necesidades del municipio.',
-      imagen: 'escalabilidad.png'
+      imagen: 'infoEscalabilidad.png'
     }
   ];
 
