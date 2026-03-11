@@ -69,7 +69,7 @@ export class HomePageComponent {
     {
       titulo: 'Informes Personalizados',
       descripcion: 'Generación de reportes en múltiples formatos: word, pdf, excel, texto e imagen.',
-      imagenes: []
+      imagenes: ['expReportes.png']
     },
     {
       titulo: 'Seguridad Integral',
@@ -112,7 +112,7 @@ export class HomePageComponent {
     {
       titulo: 'Escalabilidad',
       descripcion: 'Sistema modular que crece con las necesidades del municipio.',
-      imagen: 'expReportes.png'
+      imagen: 'escalabilidad.png'
     }
   ];
 
