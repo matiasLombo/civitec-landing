@@ -12,6 +12,7 @@ import { LucideAngularModule, Building2, FileText, Car, Store, Skull, Wallet, Ca
 })
 export class HomePageComponent {
   mobileMenuOpen = false;
+  imagenSeleccionada: string | null = null;
 
   constructor(private router: Router) {}
 
@@ -62,46 +63,56 @@ export class HomePageComponent {
   caracteristicas = [
     {
       titulo: 'Interfaz Intuitiva',
-      descripcion: 'Navegación tipo explorador para acceso rápido a toda la información municipal.'
+      descripcion: 'Navegación tipo explorador para acceso rápido a toda la información municipal.',
+      imagenes: ['automotores1.png', 'automotores2.png', 'automotores3.png']
     },
     {
       titulo: 'Informes Personalizados',
-      descripcion: 'Generación de reportes en múltiples formatos: word, pdf, excel, texto e imagen.'
+      descripcion: 'Generación de reportes en múltiples formatos: word, pdf, excel, texto e imagen.',
+      imagenes: []
     },
     {
       titulo: 'Seguridad Integral',
-      descripcion: 'Autenticación nativa o Active Directory con auditoría completa de todas las operaciones.'
+      descripcion: 'Autenticación nativa o Active Directory con auditoría completa de todas las operaciones.',
+      imagenes: []
     },
     {
       titulo: 'Copias Automatizadas',
-      descripcion: 'Sistema de backup para proteger todos los datos municipales.'
+      descripcion: 'Sistema de backup para proteger todos los datos municipales.',
+      imagenes: []
     },
     {
       titulo: 'Archivos Históricos',
-      descripcion: 'Depuración y consulta de datos históricos sin perder información.'
+      descripcion: 'Depuración y consulta de datos históricos sin perder información.',
+      imagenes: ['consultarHistorico.png']
     },
     {
       titulo: 'Alta Conectividad',
-      descripcion: 'Integración con email, web y API REST para conectar con otros sistemas (según requerimiento, presupuesto y cotización aparte).'
+      descripcion: 'Integración con email, web y API REST para conectar con otros sistemas (según requerimiento, presupuesto y cotización aparte).',
+      imagenes: []
     }
   ];
 
   beneficios = [
     {
       titulo: 'Gestión Integral',
-      descripcion: 'Un solo sistema para administrar todas las áreas del municipio.'
+      descripcion: 'Un solo sistema para administrar todas las áreas del municipio.',
+      imagen: 'modulos.png'
     },
     {
       titulo: 'Aumento de Recaudación',
-      descripcion: 'Control preciso de deudas, convenios y juicios para maximizar la recaudación municipal.'
+      descripcion: 'Control preciso de deudas, convenios y juicios para maximizar la recaudación municipal.',
+      imagen: 'informeCC.png'
     },
     {
       titulo: 'Transparencia Total',
-      descripcion: 'Auditoría completa de todas las operaciones y acceso controlado por permisos de usuario.'
+      descripcion: 'Auditoría completa de todas las operaciones y acceso controlado por permisos de usuario.',
+      imagen: 'informeAuditoriaTecnica.png'
     },
     {
       titulo: 'Escalabilidad',
-      descripcion: 'Sistema modular que crece con las necesidades del municipio.'
+      descripcion: 'Sistema modular que crece con las necesidades del municipio.',
+      imagen: 'expReportes.png'
     }
   ];
 
@@ -111,5 +122,13 @@ export class HomePageComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  abrirImagen(nombreImagen: string) {
+    this.imagenSeleccionada = nombreImagen;
+  }
+
+  cerrarImagen() {
+    this.imagenSeleccionada = null;
   }
 }
