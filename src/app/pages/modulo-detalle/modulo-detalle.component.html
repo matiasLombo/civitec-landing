@@ -66,6 +66,7 @@
             <lucide-icon *ngIf="modulo.icon === 'IdCard'" [img]="IdCard" class="w-12 h-12"></lucide-icon>
             <lucide-icon *ngIf="modulo.icon === 'Droplets'" [img]="Droplets" class="w-12 h-12"></lucide-icon>
             <lucide-icon *ngIf="modulo.icon === 'Lightbulb'" [img]="Lightbulb" class="w-12 h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Zap'" [img]="Zap" class="w-12 h-12"></lucide-icon>
           </div>
           <div>
             <h1 class="text-5xl font-bold">{{ modulo.nombre }}</h1>
@@ -89,13 +90,11 @@
           <span *ngIf="modulo.icon === 'IdCard'">Gestión integral de tasas de higiene, profilaxis y seguridad para comercios. Control completo de cuentas corrientes y distribución de comprobantes.</span>
           <span *ngIf="modulo.icon === 'Droplets'">Administración de carnets de conducir con control de vencimientos, emisión de comprobantes y gestión completa de contribuyentes.</span>
           <span *ngIf="modulo.icon === 'Lightbulb'">Gestión integral de tasas y servicios municipales con administración de cuentas corrientes de inmuebles, generación de cuotas y control de recaudación.</span>
+          <span *ngIf="modulo.icon === 'Zap'">Módulo flexible para gestión de servicios municipales diversos con configuración personalizable y completa integración con el sistema.</span>
         </p>
         <div class="flex flex-wrap gap-4">
           <button (click)="scrollToSection('funcionalidades')" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
             Ver Funcionalidades
-          </button>
-          <button (click)="scrollToSection('contacto')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition">
-            Solicitar Demo
           </button>
         </div>
       </div>
@@ -122,6 +121,7 @@
             <span *ngIf="modulo.icon === 'IdCard'">Gestión de comercios y actividades</span>
             <span *ngIf="modulo.icon === 'Droplets'">Control de vencimientos</span>
             <span *ngIf="modulo.icon === 'Lightbulb'">Integración con Catastro</span>
+            <span *ngIf="modulo.icon === 'Zap'">Servicios municipales diversos</span>
           </li>
           <li class="flex items-start">
             <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
@@ -143,8 +143,9 @@
             <span *ngIf="modulo.icon === 'IdCard'">Generación automática de cuotas</span>
             <span *ngIf="modulo.icon === 'Droplets'">Parte diario de carnets</span>
             <span *ngIf="modulo.icon === 'Lightbulb'">Generación automática de cuotas</span>
+            <span *ngIf="modulo.icon === 'Zap'">Configuración personalizable</span>
           </li>
-          <li class="flex items-start">
+          <li *ngIf="modulo.icon !== 'Zap'" class="flex items-start">
             <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
@@ -166,6 +167,48 @@
             <span *ngIf="modulo.icon === 'Lightbulb'">Integración con Tesorería</span>
           </li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Imágenes del Módulo -->
+<section *ngIf="modulo.imagenes && modulo.imagenes.length > 0" class="bg-gray-50 py-12">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative">
+      <!-- Título de la imagen actual -->
+      <div *ngIf="modulo.imagenes[slideActual] && tieneTitulo(modulo.imagenes[slideActual])" class="text-center mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">{{ getImagenTitulo(modulo.imagenes[slideActual]) }}</h2>
+      </div>
+
+      <!-- Contenedor del carrusel -->
+      <div class="relative" style="min-height: 60vh;">
+        <div class="relative w-full h-full flex items-center justify-center">
+          <ng-container *ngFor="let img of modulo.imagenes; let i = index">
+            <div *ngIf="i === slideActual" class="w-full flex items-center justify-center p-4">
+              <img [src]="'assets/' + getImagenArchivo(img)" [alt]="modulo.nombre" class="max-w-full max-h-[60vh] object-contain cursor-pointer hover:opacity-90 transition" (click)="abrirImagen(getImagenArchivo(img))">
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- Botón anterior -->
+        <button *ngIf="modulo.imagenes.length > 1" (click)="anteriorSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 text-brand-primary hover:opacity-70 active:scale-90 transition p-2">
+          <svg class="w-10 h-10 md:w-16 md:h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Botón siguiente -->
+        <button *ngIf="modulo.imagenes.length > 1" (click)="siguienteSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 text-brand-primary hover:opacity-70 active:scale-90 transition p-2">
+          <svg class="w-10 h-10 md:w-16 md:h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Indicadores -->
+      <div *ngIf="modulo.imagenes.length > 1" class="flex justify-center gap-2 mt-4">
+        <button *ngFor="let img of modulo.imagenes; let i = index" (click)="irASlide(i)" [class]="'w-3 h-3 rounded-full transition ' + (i === slideActual ? 'bg-brand-primary scale-125' : 'bg-gray-300 hover:bg-gray-400')"></button>
       </div>
     </div>
   </div>
@@ -263,6 +306,14 @@
     </div>
   </div>
 </section>
+
+<!-- Modal Imagen -->
+<div *ngIf="imagenSeleccionada" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" (click)="cerrarImagen()">
+  <div class="relative max-w-5xl max-h-[90vh]">
+    <button (click)="cerrarImagen()" class="absolute -top-12 right-0 text-white text-4xl font-bold hover:text-gray-300 transition">&times;</button>
+    <img [src]="'assets/' + imagenSeleccionada" alt="Imagen ampliada" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+  </div>
+</div>
 
 <!-- Footer simplificado -->
 <footer class="bg-gray-900 text-gray-300 py-8">
