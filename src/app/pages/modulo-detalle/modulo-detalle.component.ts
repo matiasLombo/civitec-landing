@@ -43,7 +43,7 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
   modulosData: { [key: string]: any } = {
     'catastro': {
       nombre: 'Catastro',
-      subtitulo: 'Sistema integral de gestión catastral para administración de propiedades, títulos y contribuyentes',
+      subtitulo: 'Sistema integral de gestión catastral para administración de propiedades y propietarios (contribuyentes)',
       icon: 'Building2',
       imagenes: [
         { archivo: 'catastro-basica.png', titulo: 'Interfaz Básica' },
@@ -51,21 +51,21 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'catastro-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
       funcionalidades: [
-        'Gestión completa de expedientes de contribuyentes y sus títulos inmobiliarios',
+        'Gestión completa de expedientes de propietarios (contribuyentes)',
         'Mantenimiento de propiedades con datos catastrales detallados (adremas, dimensiones, ubicaciones)',
-        'Administración de propietarios con información personal y documentos asociados',
+        'Administración de propietarios (contribuyentes) con información personal y documentos asociados',
         'Gestión de calles y directorio catastral del municipio',
         'Control de manzanas y parcelas con nomenclatura catastral',
-        'Gestión de títulos inmobiliarios y su historial de transmisiones',
+        'Gestión de títulos y su historial de transferencias',
         'Emisión de legajos catastrales y completos de contribuyentes',
-        'Administración de planillas y relaciones de pedido',
-        'Auditoría completa de cambios en registros con tracking de usuarios',
+        'Carga y seguimiento de relaciones de pedido afectadas a órdenes de compra desde el módulo Compras',
+        'Auditoría completa de cambios en registros con seguimiento de usuarios',
         'Sistema de búsquedas avanzadas con filtros personalizados'
       ],
       beneficios: [
         {
           titulo: 'Centralización de Información Catastral',
-          descripcion: 'Almacena todos los datos de propiedades, propietarios y títulos en un sistema integrado que facilita el acceso y consulta de información.'
+          descripcion: 'Almacena todos los datos de propiedades y propietarios (contribuyentes) en un sistema integrado que facilita el acceso y consulta de información.'
         },
         {
           titulo: 'Optimización de Procesos Administrativos',
@@ -73,7 +73,7 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         },
         {
           titulo: 'Actualización Permanente del Padrón',
-          descripcion: 'Mantiene la información de propiedades y propietarios siempre actualizada con historial completo de modificaciones y transmisiones de títulos.'
+          descripcion: 'Mantiene la información de propiedades y propietarios (contribuyentes) siempre actualizada con historial completo de modificaciones y transferencias de títulos.'
         },
         {
           titulo: 'Mejora en la Recaudación',
@@ -81,7 +81,7 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         },
         {
           titulo: 'Transparencia y Control',
-          descripcion: 'Ofrece auditoría completa de todas las acciones realizadas, permitiendo tracking de quién creó o modificó cada registro y cuándo.'
+          descripcion: 'Ofrece auditoría completa de todas las acciones realizadas, permitiendo seguimiento de quién creó o modificó cada registro y cuándo.'
         },
         {
           titulo: 'Información para la Toma de Decisiones',
@@ -91,8 +91,8 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
       caracteristicas: [
         { titulo: 'Interfaz Tipo Explorador', descripcion: 'Panel de carpetas intuitivo que permite navegar entre diferentes opciones del sistema y acceder rápidamente a la información.' },
         { titulo: 'Búsquedas Avanzadas', descripcion: 'Panel de búsqueda potente con filtros múltiples que permite encontrar registros por cualquier campo y aplicar criterios personalizados.' },
-        { titulo: 'Seguridad y Auditoría de Usuarios', descripcion: 'Sistema multiusuario con perfiles (Administrador/Operador), control de accesos y tracking completo de acciones por usuario.' },
-        { titulo: 'Informes y Listados Personalizados', descripcion: 'Generación de reportes configurables con filtros, ordenamientos y salida a diferentes tipos de impresora.' },
+        { titulo: 'Seguridad y Auditoría de Usuarios', descripcion: 'Sistema multiusuario con perfiles (Administrador/Operador), control de accesos y seguimiento completo de acciones por usuario.' },
+        { titulo: 'Informes y Listados Personalizados', descripcion: 'Generación de reportes configurables con filtros y ordenamientos.' },
         { titulo: 'Historial de Cambios', descripcion: 'Cada registro mantiene auditoría básica (usuario y fecha de creación/modificación) accesible desde las propiedades del registro.' },
         { titulo: 'Gestión de Archivos Históricos', descripcion: 'Posibilidad de crear archivos históricos para depurar la base de datos actual mientras se mantiene la consulta de datos antiguos.' }
       ]
@@ -427,8 +427,8 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
       caracteristicas: [
         { titulo: 'Interfaz Tipo Explorador', descripcion: 'Permite navegar intuitivamente entre carpetas de datos con acceso directo a registros, búsquedas y listados.' },
         { titulo: 'Búsqueda Avanzada', descripcion: 'Ofrece filtros ilimitados sobre cualquier carpeta de datos con personalización de campos a visualizar.' },
-        { titulo: 'Informes Personalizables', descripcion: 'Permite filtrar y ordenar información según necesidades, con salida a diferentes tipos de impresora.' },
-        { titulo: 'Seguridad y Auditoría', descripcion: 'Registra cada acción de usuario con tracking independiente por registro, complementado con auditoría técnica.' },
+        { titulo: 'Informes Personalizables', descripcion: 'Permite filtrar y ordenar información según necesidades.' },
+        { titulo: 'Seguridad y Auditoría', descripcion: 'Registra cada acción de usuario con seguimiento independiente por registro, complementado con auditoría técnica.' },
         { titulo: 'Archivos Históricos', descripcion: 'Permite crear y consultar archivos históricos para depurar la base actual y agilizar operaciones.' },
         { titulo: 'Conectividad y Comunicación', descripcion: 'Integra envío de correos electrónicos directo desde el sistema y navegación web para mayor productividad.' }
       ]
@@ -595,7 +595,7 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
       caracteristicas: [
         { titulo: 'Interfaz Explorador', descripcion: 'Acceso intuitivo a toda la información con un solo clic, permitiendo visualizar y actuar inmediatamente sobre cualquier registro.' },
         { titulo: 'Búsqueda Avanzada', descripcion: 'Búsqueda sin limitaciones con filtros personalizables según tipo de dato y visualización selectiva de resultados.' },
-        { titulo: 'Informes Flexibles', descripcion: 'Listados personalizables con opciones de filtro, ordenamiento y salida a diferentes tipos de impresora.' },
+        { titulo: 'Informes Flexibles', descripcion: 'Listados personalizables con opciones de filtro y ordenamiento.' },
         { titulo: 'Seguridad Integrada', descripcion: 'Login local o Windows (Active Directory Azure) con configuración de permisos por usuario.' },
         { titulo: 'Archivos Históricos', descripcion: 'Capacidad de generar archivos históricos para depurar base de datos y agilizar operaciones.' },
         { titulo: 'Conectividad Total', descripcion: 'Envío de correos electrónicos, navegación web y conversión de información a múltiples formatos.' }
