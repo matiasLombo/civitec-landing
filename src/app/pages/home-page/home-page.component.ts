@@ -74,12 +74,12 @@ export class HomePageComponent {
     {
       titulo: 'Seguridad Integral',
       descripcion: 'Autenticación nativa o Active Directory con auditoría completa de todas las operaciones.',
-      imagenes: []
+      imagenes: ['seguridad-integral.png']
     },
     {
-      titulo: 'Copias Automatizadas',
+      titulo: 'Copias de seguridad',
       descripcion: 'Sistema de backup para proteger todos los datos municipales.',
-      imagenes: []
+      imagenes: ['copias-seguridad.png']
     },
     {
       titulo: 'Archivos Históricos',
@@ -89,7 +89,7 @@ export class HomePageComponent {
     {
       titulo: 'Alta Conectividad',
       descripcion: 'Integración con email, web y API REST para conectar con otros sistemas (según requerimiento, presupuesto y cotización aparte).',
-      imagenes: []
+      imagenes: ['alta-conectividad.png']
     }
   ];
 

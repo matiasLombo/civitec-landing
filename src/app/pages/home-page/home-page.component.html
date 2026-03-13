@@ -177,10 +177,10 @@
         <!-- Imágenes de características -->
         <div *ngIf="caracteristica.imagenes && caracteristica.imagenes.length > 0" class="mb-3">
           <div *ngIf="caracteristica.imagenes.length === 1" class="flex justify-center">
-            <img [src]="'assets/' + caracteristica.imagenes[0]" [alt]="caracteristica.titulo" class="max-w-full h-auto cursor-pointer hover:opacity-90 transition rounded-lg" style="max-height: 250px;" (click)="abrirImagen(caracteristica.imagenes[0])">
+            <img [src]="'assets/' + caracteristica.imagenes[0]" [alt]="caracteristica.titulo" [class.rounded-lg]="caracteristica.titulo === 'Interfaz Intuitiva'" class="max-w-full h-auto cursor-pointer hover:opacity-90 transition" style="max-height: 250px;" (click)="abrirImagen(caracteristica.imagenes[0])">
           </div>
           <div *ngIf="caracteristica.imagenes.length > 1" class="flex justify-center gap-2 flex-wrap">
-            <img *ngFor="let img of caracteristica.imagenes" [src]="'assets/' + img" [alt]="caracteristica.titulo" class="max-w-full h-auto cursor-pointer hover:opacity-90 transition rounded-lg" style="max-height: 200px; max-width: 30%;" (click)="abrirImagen(img)">
+            <img *ngFor="let img of caracteristica.imagenes" [src]="'assets/' + img" [alt]="caracteristica.titulo" [class.rounded-lg]="caracteristica.titulo === 'Interfaz Intuitiva'" class="max-w-full h-auto cursor-pointer hover:opacity-90 transition" style="max-height: 200px; max-width: 30%;" (click)="abrirImagen(img)">
           </div>
         </div>
 
@@ -269,7 +269,7 @@
       </div>
     </div>
     <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-      <p>&copy; 2025 API Soft. Todos los derechos reservados.</p>
+      <p>&copy; 2005-2025 API Soft. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
