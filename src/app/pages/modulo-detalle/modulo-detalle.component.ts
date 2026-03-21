@@ -50,6 +50,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'catastro-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'catastro-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'catastro-titulos.png', titulo: 'Gestión de Títulos' },
+        { archivo: 'catastro-contribuyente.png', titulo: 'Ficha del Contribuyente' }
+      ],
       funcionalidades: [
         'Gestión completa de expedientes de propietarios (contribuyentes)',
         'Mantenimiento de propiedades con datos catastrales detallados (adremas, dimensiones, ubicaciones)',
@@ -106,17 +110,22 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'inmobiliario-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'inmobiliario-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'inmobiliario-captura-inmueble.png', titulo: 'Gestión de Inmuebles' },
+        { archivo: 'inmobiliario-captura-contribuyente.png', titulo: 'Ficha del Contribuyente' },
+        { archivo: 'inmobiliario-captura-comprobante.png', titulo: 'Emisión de Comprobantes' }
+      ],
       funcionalidades: [
         'Cuentas corrientes asociadas a inmuebles (adremas)',
         'Generación automática de cuotas periódicas',
-        'Liquidación de impuestos inmobiliarios',
+        'Liquidación de impuesto inmobiliario',
         'Emisión de comprobantes de pago',
         'Informes y reportes tributarios personalizados',
         'Gestión completa de contribuyentes',
         'Actualización automática de deudas',
         'Anulación y reemplazo de comprobantes',
         'Control de morosos y deudores',
-        'Interfaz directa con módulo Catastro'
+        'Interfaz directa con Catastro, Convenios, Compras y Tesorería'
       ],
       beneficios: [
         {
