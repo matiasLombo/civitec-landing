@@ -234,6 +234,17 @@
   </div>
 </section>
 
+<!-- Capturas del Sistema -->
+<section *ngIf="modulo.capturas && modulo.capturas.length > 0" class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
+      <div *ngFor="let captura of modulo.capturas" class="cursor-pointer hover:opacity-90 transition overflow-hidden w-full sm:w-auto" style="flex: 1 1 480px; max-width: 700px; height: 400px;" (click)="abrirImagen(captura.archivo)">
+        <img [src]="'assets/' + captura.archivo" [alt]="captura.titulo" class="w-full h-full object-contain">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Beneficios -->
 <section id="beneficios" class="bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
