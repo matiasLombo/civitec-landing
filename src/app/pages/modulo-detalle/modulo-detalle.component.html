@@ -3,20 +3,42 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <div class="flex items-center">
-        <button (click)="volver()" class="inline-flex items-center text-brand-primary hover:text-blue-700 font-semibold">
+        <button (click)="volver()" class="inline-flex items-center text-brand-primary hover:opacity-80 font-semibold cursor-pointer transition">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
           Volver a Módulos
         </button>
-        <span class="ml-6 text-xl font-bold text-gray-900">{{ modulo.nombre }}</span>
       </div>
       <div class="hidden md:flex items-center space-x-4">
         <a (click)="scrollToSection('funcionalidades')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Funcionalidades</a>
         <a (click)="scrollToSection('beneficios')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Beneficios</a>
         <a (click)="scrollToSection('caracteristicas')" class="text-gray-700 hover:text-brand-primary cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50 transition">Características</a>
-        <a (click)="scrollToSection('contacto')" class="bg-brand-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contacto</a>
+        <a (click)="scrollToSection('contacto')" class="bg-brand-primary text-white px-4 py-2 rounded-lg hover:opacity-90 cursor-pointer transition">Contacto</a>
       </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" class="text-gray-700 hover:text-brand-primary">
+          <span class="text-2xl">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div *ngIf="mobileMenuOpen" class="md:hidden pb-4">
+      <a (click)="scrollToSection('funcionalidades')" class="block w-full text-left px-4 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium cursor-pointer">
+        Funcionalidades
+      </a>
+      <a (click)="scrollToSection('beneficios')" class="block w-full text-left px-4 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium cursor-pointer">
+        Beneficios
+      </a>
+      <a (click)="scrollToSection('caracteristicas')" class="block w-full text-left px-4 py-2 text-gray-700 hover:text-brand-primary text-sm font-medium cursor-pointer">
+        Características
+      </a>
+      <a (click)="scrollToSection('contacto')" class="block w-full mt-2 bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 cursor-pointer transition">
+        Contacto
+      </a>
     </div>
   </div>
 </nav>
@@ -27,33 +49,34 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
         <div class="flex items-center mb-4">
-          <div class="bg-white/10 rounded-lg p-3 mr-4">
-            <lucide-icon *ngIf="modulo.icon === 'FileText'" [img]="FileText" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Car'" [img]="Car" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Building2'" [img]="Building2" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Store'" [img]="Store" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Wallet'" [img]="Wallet" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'CalculatorIcon'" [img]="CalculatorIcon" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Skull'" [img]="Skull" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Gavel'" [img]="Gavel" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'ShoppingCart'" [img]="ShoppingCart" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'HardHat'" [img]="HardHat" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Server'" [img]="Server" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Folder'" [img]="Folder" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'FileSignature'" [img]="FileSignature" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'IdCard'" [img]="IdCard" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Droplets'" [img]="Droplets" class="w-12 h-12"></lucide-icon>
-            <lucide-icon *ngIf="modulo.icon === 'Lightbulb'" [img]="Lightbulb" class="w-12 h-12"></lucide-icon>
+          <div class="bg-white/10 rounded-lg p-2 sm:p-3 mr-3 sm:mr-4">
+            <lucide-icon *ngIf="modulo.icon === 'FileText'" [img]="FileText" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Car'" [img]="Car" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Building2'" [img]="Building2" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Store'" [img]="Store" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Wallet'" [img]="Wallet" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'CalculatorIcon'" [img]="CalculatorIcon" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Skull'" [img]="Skull" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Gavel'" [img]="Gavel" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'ShoppingCart'" [img]="ShoppingCart" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'HardHat'" [img]="HardHat" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Server'" [img]="Server" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Folder'" [img]="Folder" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'FileSignature'" [img]="FileSignature" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'IdCard'" [img]="IdCard" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Droplets'" [img]="Droplets" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Lightbulb'" [img]="Lightbulb" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
+            <lucide-icon *ngIf="modulo.icon === 'Zap'" [img]="Zap" class="w-7 h-7 sm:w-12 sm:h-12"></lucide-icon>
           </div>
           <div>
-            <h1 class="text-5xl font-bold">{{ modulo.nombre }}</h1>
-            <p class="text-xl text-blue-100 mt-2">{{ modulo.subtitulo }}</p>
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold">{{ modulo.nombre }}</h1>
+            <p class="text-sm sm:text-base lg:text-xl text-blue-100 mt-2">{{ modulo.subtitulo }}</p>
           </div>
         </div>
-        <p class="text-lg mb-8 text-blue-100 mt-6">
+        <p class="text-sm sm:text-base lg:text-lg mb-8 text-blue-100 mt-6">
           <span *ngIf="modulo.icon === 'FileText'">Solución completa para la gestión del impuesto inmobiliario municipal. Integración total con el módulo Catastro para administración eficiente de la recaudación.</span>
           <span *ngIf="modulo.icon === 'Car'">Solución completa para la gestión del parque automotor municipal. Control total de expedientes, cuotas, boletas de pago y estados de deuda.</span>
-          <span *ngIf="modulo.icon === 'Building2'">Sistema integral de gestión catastral que centraliza la información de propiedades, propietarios y títulos inmobiliarios. Base fundamental para la administración tributaria municipal.</span>
+          <span *ngIf="modulo.icon === 'Building2'">Sistema integral de gestión catastral que centraliza la información de propiedades y propietarios (contribuyentes). Base fundamental para la administración tributaria municipal.</span>
           <span *ngIf="modulo.icon === 'Store'">Gestión integral de cuentas corrientes asociadas a comercios. Control completo de contribuyentes, cuotas, comprobantes y distribución de boletas de pago.</span>
           <span *ngIf="modulo.icon === 'Wallet'">Gestión completa de cobros y pagos municipales con control integral de recaudación, movimientos de caja y tesorería.</span>
           <span *ngIf="modulo.icon === 'CalculatorIcon'">Sistema contable integral con plan de cuentas configurable, asientos automáticos, control bancario y centros de costos.</span>
@@ -67,18 +90,15 @@
           <span *ngIf="modulo.icon === 'IdCard'">Gestión integral de tasas de higiene, profilaxis y seguridad para comercios. Control completo de cuentas corrientes y distribución de comprobantes.</span>
           <span *ngIf="modulo.icon === 'Droplets'">Administración de carnets de conducir con control de vencimientos, emisión de comprobantes y gestión completa de contribuyentes.</span>
           <span *ngIf="modulo.icon === 'Lightbulb'">Gestión integral de tasas y servicios municipales con administración de cuentas corrientes de inmuebles, generación de cuotas y control de recaudación.</span>
+          <span *ngIf="modulo.icon === 'Zap'">Módulo flexible para gestión de servicios municipales diversos con configuración personalizable y completa integración con el sistema.</span>
         </p>
         <div class="flex flex-wrap gap-4">
           <button (click)="scrollToSection('funcionalidades')" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
             Ver Funcionalidades
           </button>
-          <button (click)="scrollToSection('contacto')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition">
-            Solicitar Demo
-          </button>
         </div>
       </div>
       <div class="bg-white/10 rounded-lg p-8 backdrop-blur-sm border border-white/20">
-        <h3 class="text-2xl font-bold mb-6">Resumen del Módulo</h3>
         <ul class="space-y-3">
           <li class="flex items-start">
             <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
@@ -100,6 +120,7 @@
             <span *ngIf="modulo.icon === 'IdCard'">Gestión de comercios y actividades</span>
             <span *ngIf="modulo.icon === 'Droplets'">Control de vencimientos</span>
             <span *ngIf="modulo.icon === 'Lightbulb'">Integración con Catastro</span>
+            <span *ngIf="modulo.icon === 'Zap'">Servicios municipales diversos</span>
           </li>
           <li class="flex items-start">
             <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
@@ -121,8 +142,9 @@
             <span *ngIf="modulo.icon === 'IdCard'">Generación automática de cuotas</span>
             <span *ngIf="modulo.icon === 'Droplets'">Parte diario de carnets</span>
             <span *ngIf="modulo.icon === 'Lightbulb'">Generación automática de cuotas</span>
+            <span *ngIf="modulo.icon === 'Zap'">Configuración personalizable</span>
           </li>
-          <li class="flex items-start">
+          <li *ngIf="modulo.icon !== 'Zap'" class="flex items-start">
             <svg class="w-6 h-6 mr-3 flex-shrink-0 text-green-300" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
@@ -149,12 +171,54 @@
   </div>
 </section>
 
+<!-- Imágenes del Módulo -->
+<section *ngIf="modulo.imagenes && modulo.imagenes.length > 0" class="bg-gray-50 py-12">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative">
+      <!-- Título de la imagen actual -->
+      <div *ngIf="modulo.imagenes[slideActual] && tieneTitulo(modulo.imagenes[slideActual])" class="text-center mb-6">
+        <h2 class="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900">{{ getImagenTitulo(modulo.imagenes[slideActual]) }}</h2>
+      </div>
+
+      <!-- Contenedor del carrusel -->
+      <div class="relative" style="min-height: 60vh;">
+        <div class="relative w-full h-full flex items-center justify-center">
+          <ng-container *ngFor="let img of modulo.imagenes; let i = index">
+            <div *ngIf="i === slideActual" class="w-full flex items-center justify-center p-4">
+              <img [src]="'assets/' + getImagenArchivo(img)" [alt]="modulo.nombre" class="max-w-full max-h-[60vh] object-contain cursor-pointer hover:opacity-90 transition" (click)="abrirImagen(getImagenArchivo(img))">
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- Botón anterior -->
+        <button *ngIf="modulo.imagenes.length > 1" (click)="anteriorSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 text-brand-primary hover:opacity-70 active:scale-90 transition p-2">
+          <svg class="w-10 h-10 md:w-16 md:h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Botón siguiente -->
+        <button *ngIf="modulo.imagenes.length > 1" (click)="siguienteSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 text-brand-primary hover:opacity-70 active:scale-90 transition p-2">
+          <svg class="w-10 h-10 md:w-16 md:h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Indicadores -->
+      <div *ngIf="modulo.imagenes.length > 1" class="flex justify-center gap-2 mt-4">
+        <button *ngFor="let img of modulo.imagenes; let i = index" (click)="irASlide(i)" [class]="'w-3 h-3 rounded-full transition ' + (i === slideActual ? 'bg-brand-primary scale-125' : 'bg-gray-300 hover:bg-gray-400')"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Funcionalidades -->
 <section id="funcionalidades" class="bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">Funcionalidades Principales</h2>
-      <p class="text-xl text-gray-600">Todo lo que necesita para administrar {{ modulo.nombre }}</p>
+      <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">Funcionalidades Principales</h2>
+      <p class="text-base sm:text-xl text-gray-600">Todo lo que necesita para administrar {{ modulo.nombre }}</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -170,12 +234,26 @@
   </div>
 </section>
 
+<!-- Capturas del Sistema -->
+<section *ngIf="modulo.capturas && modulo.capturas.length > 0" class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
+      <div *ngFor="let captura of modulo.capturas" class="cursor-pointer hover:opacity-90 transition overflow-hidden w-full sm:w-auto" style="flex: 1 1 480px; max-width: 700px;" (click)="abrirImagen(captura.archivo)">
+        <p class="text-center text-sm sm:text-base font-semibold text-gray-700 mb-2">{{ captura.titulo }}</p>
+        <div style="height: 400px;">
+          <img [src]="'assets/' + captura.archivo" [alt]="captura.titulo" class="w-full h-full object-contain">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Beneficios -->
 <section id="beneficios" class="bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">Beneficios para su Municipio</h2>
-      <p class="text-xl text-gray-600">Transforme la gestión de {{ modulo.nombre }}</p>
+      <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">Beneficios para su Municipio</h2>
+      <p class="text-base sm:text-xl text-gray-600">Transforme la gestión de {{ modulo.nombre }}</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -200,8 +278,8 @@
 <section id="caracteristicas" class="bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">Características Técnicas</h2>
-      <p class="text-xl text-gray-600">Tecnología de punta aplicada a la gestión tributaria</p>
+      <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">Características Técnicas</h2>
+      <p class="text-base sm:text-xl text-gray-600">Tecnología de punta aplicada a la gestión tributaria</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -221,17 +299,17 @@
 <!-- Contacto -->
 <section id="contacto" class="bg-brand-primary text-white">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-4xl font-bold mb-6">¿Interesado en este Módulo?</h2>
+    <h2 class="text-2xl sm:text-4xl font-bold mb-6">¿Interesado en una DEMO?</h2>
     <p class="text-xl mb-8 text-blue-100">
-      Solicite una demostración personalizada del Módulo de {{ modulo.nombre }}
+      Contáctese con nosotros para organizar una demostración en línea
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:contacto&#64;civitec.com.ar?subject=Demo%20Módulo%20{{ modulo.nombre }}" class="bg-white text-brand-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
+      <!-- <a href="mailto:contacto&#64;civitec.com.ar?subject=Demo%20Módulo%20{{ modulo.nombre }}" class="bg-white text-brand-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
         Solicitar Demo
-      </a>
+      </a> -->
       <button (click)="volver()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition inline-flex items-center justify-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
@@ -242,9 +320,17 @@
   </div>
 </section>
 
+<!-- Modal Imagen -->
+<div *ngIf="imagenSeleccionada" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" (click)="cerrarImagen()">
+  <div class="relative max-w-5xl max-h-[90vh]">
+    <button (click)="cerrarImagen()" class="absolute -top-12 right-0 text-white text-4xl font-bold hover:text-gray-300 transition">&times;</button>
+    <img [src]="'assets/' + imagenSeleccionada" alt="Imagen ampliada" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+  </div>
+</div>
+
 <!-- Footer simplificado -->
 <footer class="bg-gray-900 text-gray-300 py-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <p class="text-sm">&copy; 2025 API Soft. Todos los derechos reservados.</p>
+    <p class="text-sm">&copy; 2005-2025 API Soft. Todos los derechos reservados.</p>
   </div>
 </footer>

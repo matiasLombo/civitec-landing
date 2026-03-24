@@ -11,7 +11,15 @@ import { LucideAngularModule, Building2, FileText, Car, Store, Skull, Wallet, Ca
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
+  mobileMenuOpen = false;
+  imagenSeleccionada: string | null = null;
+
   constructor(private router: Router) {}
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
   // Icons
   Building2 = Building2;
   FileText = FileText;
@@ -37,7 +45,7 @@ export class HomePageComponent {
     { icon: 'FileText', nombre: 'Inmobiliario', slug: 'inmobiliario', descripcion: 'Tasa inmobiliaria' },
     { icon: 'Car', nombre: 'Automotores', slug: 'automotores', descripcion: 'Registro y tasa automotor' },
     { icon: 'Store', nombre: 'Comercio', slug: 'comercio', descripcion: 'Habilitación comercial' },
-    { icon: 'Droplets', nombre: 'THPS', slug: 'thps', descripcion: 'Higiene y Seguridad' },
+    { icon: 'Droplets', nombre: 'Tasa higiene profilaxis y seguridad', slug: 'thps', descripcion: 'Higiene y Seguridad' },
     { icon: 'Server', nombre: 'Tasas y Servicios', slug: 'tasas-servicios', descripcion: 'Tasas municipales variadas' },
     { icon: 'Lightbulb', nombre: 'Alumbrado Público', slug: 'alumbrado-publico', descripcion: 'Tasa de alumbrado' },
     { icon: 'IdCard', nombre: 'Transporte y Carnet', slug: 'transporte-carnet', descripcion: 'Carnets de conducir' },
@@ -49,60 +57,78 @@ export class HomePageComponent {
     { icon: 'CalculatorIcon', nombre: 'Contabilidad', slug: 'contabilidad', descripcion: 'Sistema contable completo' },
     { icon: 'ShoppingCart', nombre: 'Compras', slug: 'compras', descripcion: 'Adquisiciones municipales' },
     { icon: 'HardHat', nombre: 'Obras Públicas', slug: 'obras-publicas', descripcion: 'Control de obras' },
-    { icon: 'Zap', nombre: 'Servicios Varios', slug: 'servicios-varios', descripcion: 'Otros servicios municipales' },
-    { icon: 'Scale', nombre: 'API CiviTEC', slug: 'api-civitec', descripcion: 'Integración con sistemas externos' }
+    { icon: 'Zap', nombre: 'Servicios Varios', slug: 'servicios-varios', descripcion: 'Otros servicios municipales' }
   ];
 
   caracteristicas = [
     {
       titulo: 'Interfaz Intuitiva',
-      descripcion: 'Navegación tipo explorador para acceso rápido a toda la información municipal.'
+      descripcion: 'Navegación tipo explorador para acceso rápido a toda la información municipal.',
+      imagenes: ['automotores1.png', 'automotores2.png', 'automotores3.png']
     },
     {
       titulo: 'Informes Personalizados',
-      descripcion: 'Generación de reportes en múltiples formatos: matricial, láser e inyección de tinta.'
+      descripcion: 'Generación de reportes en múltiples formatos: word, pdf, excel, texto e imagen.',
+      imagenes: ['expReportes.png']
     },
     {
       titulo: 'Seguridad Integral',
-      descripcion: 'Autenticación local o Active Directory con auditoría completa de todas las operaciones.'
+      descripcion: 'Autenticación nativa o Active Directory con auditoría completa de todas las operaciones.',
+      imagenes: ['seguridad-integral.png']
     },
     {
-      titulo: 'Copias Automatizadas',
-      descripcion: 'Sistema de backup programable para proteger todos los datos municipales.'
+      titulo: 'Copias de seguridad',
+      descripcion: 'Sistema de backup para proteger todos los datos municipales.',
+      imagenes: ['copias-seguridad.png']
     },
     {
       titulo: 'Archivos Históricos',
-      descripcion: 'Depuración y consulta de datos históricos sin perder información.'
+      descripcion: 'Depuración y consulta de datos históricos sin perder información.',
+      imagenes: ['consultarHistorico.png']
     },
     {
       titulo: 'Alta Conectividad',
-      descripcion: 'Integración con email, web y API REST para conectar con otros sistemas.'
+      descripcion: 'Integración con email, web y API REST para conectar con otros sistemas (según requerimiento, presupuesto y cotización aparte).',
+      imagenes: ['alta-conectividad.png']
     }
   ];
 
   beneficios = [
     {
       titulo: 'Gestión Integral',
-      descripcion: 'Un solo sistema para administrar todas las áreas del municipio, desde tributación hasta obras públicas.'
+      descripcion: 'Un solo sistema para administrar todas las áreas del municipio.',
+      imagen: 'modulo.png'
     },
     {
       titulo: 'Aumento de Recaudación',
-      descripcion: 'Control preciso de deudas, convenios y juicios para maximizar la recaudación municipal.'
+      descripcion: 'Control preciso de deudas, convenios y juicios para maximizar la recaudación municipal.',
+      imagen: 'infoCC.png'
     },
     {
       titulo: 'Transparencia Total',
-      descripcion: 'Auditoría completa de todas las operaciones y acceso controlado por permisos de usuario.'
+      descripcion: 'Auditoría completa de todas las operaciones y acceso controlado por permisos de usuario.',
+      imagen: 'infoAuditoriaTecnica.png'
     },
     {
       titulo: 'Escalabilidad',
-      descripcion: 'Sistema modular que crece con las necesidades del municipio. Implementación por etapas.'
+      descripcion: 'Sistema modular que crece con las necesidades del municipio.',
+      imagen: 'infoEscalabilidad.png'
     }
   ];
 
   scrollToSection(id: string) {
+    this.mobileMenuOpen = false;
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  abrirImagen(nombreImagen: string) {
+    this.imagenSeleccionada = nombreImagen;
+  }
+
+  cerrarImagen() {
+    this.imagenSeleccionada = null;
   }
 }
