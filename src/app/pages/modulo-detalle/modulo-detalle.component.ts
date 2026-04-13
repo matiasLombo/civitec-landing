@@ -51,8 +51,8 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'catastro-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
       capturas: [
-        { archivo: 'catastro-titulos.png', titulo: 'Gestión de Títulos' },
-        { archivo: 'catastro-contribuyente.png', titulo: 'Ficha del Contribuyente' }
+        { archivo: 'IMAGENES/CATASTRO/Legajo de titulos-MOD.png', titulo: 'Gestión de Títulos' },
+        { archivo: 'IMAGENES/CATASTRO/Legajo de contribuyente-MOD.png', titulo: 'Ficha del Contribuyente' }
       ],
       funcionalidades: [
         'Gestión completa de expedientes de propietarios (contribuyentes)',
@@ -111,9 +111,9 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'inmobiliario-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
       capturas: [
-        { archivo: 'inmobiliario-captura-inmueble.png', titulo: 'Gestión de Inmuebles' },
-        { archivo: 'inmobiliario-captura-contribuyente.png', titulo: 'Ficha del Contribuyente' },
-        { archivo: 'inmobiliario-captura-comprobante.png', titulo: 'Emisión de Comprobantes' }
+        { archivo: 'IMAGENES/INMUEBLES/Legajo de inmueble-MOD.png', titulo: 'Legajo de Inmueble' },
+        { archivo: 'IMAGENES/INMUEBLES/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' },
+        { archivo: 'IMAGENES/INMUEBLES/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' }
       ],
       funcionalidades: [
         'Cuentas corrientes asociadas a inmuebles (adremas)',
@@ -171,6 +171,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'automotores2.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'automotores3.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/AUTOMOTOR/Legajo de automotor-MOD.png', titulo: 'Legajo de Automotor' },
+        { archivo: 'IMAGENES/AUTOMOTOR/Legajo de comprobante-MOD.png', titulo: 'Legajo de Comprobante' },
+        { archivo: 'IMAGENES/AUTOMOTOR/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' }
+      ],
       funcionalidades: [
         'Expedientes de automotores del parque automotor',
         'Consulta de datos de contribuyentes y titulares',
@@ -201,8 +206,8 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
           descripcion: 'Generación rápida de estados de deuda para control fiscal y gestión de cobranza.'
         },
         {
-          titulo: 'Integración con Tesorería',
-          descripcion: 'Los cobros de automotores se integran automáticamente con el módulo de Tesorería.'
+          titulo: 'Integración con Catastro, Convenios, Compras y Tesorería',
+          descripcion: 'Los cobros de automotores se integran automáticamente con los módulos de Catastro, Convenios, Compras y Tesorería.'
         },
         {
           titulo: 'Actualización Automática',
@@ -226,6 +231,13 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'comercio-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'comercio-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'comercio-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/TASA HABILITACION COMERCIAL/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TASA HABILITACION COMERCIAL/Legajo de contribuyentes-MOD.png', titulo: 'Legajo de Contribuyentes' },
+        { archivo: 'IMAGENES/TASA HABILITACION COMERCIAL/Legajo de cuentas-MOD.png', titulo: 'Legajo de Cuentas' },
+        { archivo: 'IMAGENES/TASA HABILITACION COMERCIAL/Legajo de infracciones-MOD.png', titulo: 'Legajo de Infracciones' },
+        { archivo: 'IMAGENES/TASA HABILITACION COMERCIAL/Legajo de intimaciones-MOD.png', titulo: 'Legajo de Intimaciones' }
       ],
       funcionalidades: [
         'Gestión completa de contribuyentes y comercios con almacenamiento de cuentas corrientes',
@@ -395,6 +407,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'cementerio-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'cementerio-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/CEMENTERIO/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/CEMENTERIO/Legajo de contribuyentes-MOD.png', titulo: 'Legajo de Contribuyentes' },
+        { archivo: 'IMAGENES/CEMENTERIO/Legajo de cuentas-MOD.png', titulo: 'Legajo de Cuentas' }
+      ],
       funcionalidades: [
         'Gestión completa de nichos y tumbas con administración de cuentas asociadas a contribuyentes',
         'Administración de cuentas corrientes con control de movimientos y saldos',
@@ -450,6 +467,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'juzgado-faltas-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'juzgado-faltas-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'juzgado-faltas-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/JUZGADO DE FALTAS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/JUZGADO DE FALTAS/Legajo de contribuyentes-MOD.png', titulo: 'Legajo de Contribuyentes' }
       ],
       funcionalidades: [
         'Gestión completa de actas de infracción con documentación asociada y seguimiento de estados',
@@ -619,6 +640,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'ccv-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'ccv-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/CUENTAS CORRIENTES VARIAS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/CUENTAS CORRIENTES VARIAS/Legajo de cuenta-MOD.png', titulo: 'Legajo de Cuenta' },
+        { archivo: 'IMAGENES/CUENTAS CORRIENTES VARIAS/Legajo del contribuyente-MOD.png', titulo: 'Legajo del Contribuyente' }
+      ],
       funcionalidades: [
         'Gestión completa de cuentas corrientes con materiales, conceptos o valores monetarios',
         'Generación automática y manual de cuotas con cálculo de intereses',
@@ -674,6 +700,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'convenios-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'convenios-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'convenios-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/CONVENIOS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/CONVENIOS/Legajo de convenios-MOD.png', titulo: 'Legajo de Convenios' },
+        { archivo: 'IMAGENES/CONVENIOS/Legajo de juicios-MOD.png', titulo: 'Legajo de Juicios' }
       ],
       funcionalidades: [
         'Gestión completa de convenios administrativos y judiciales',
@@ -731,6 +762,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'alumbrado-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'alumbrado-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/TASA ALUMBRADO PUBLICO/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TASA ALUMBRADO PUBLICO/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' },
+        { archivo: 'IMAGENES/TASA ALUMBRADO PUBLICO/Legajo de inmuebles-MOD.png', titulo: 'Legajo de Inmuebles' }
+      ],
       funcionalidades: [
         'Administración básica integral con búsqueda por CUIT y datos de cuenta',
         'Gestión completa de inmuebles (adremas) con cuentas corrientes',
@@ -786,6 +822,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'thps-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'thps-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'thps-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/TASA HIGIENE Y PROFILAXIS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TASA HIGIENE Y PROFILAXIS/Legajo de contribuyentes-MOD.png', titulo: 'Legajo de Contribuyentes' },
+        { archivo: 'IMAGENES/TASA HIGIENE Y PROFILAXIS/Legajo de cuentas-MOD.png', titulo: 'Legajo de Cuentas' }
       ],
       funcionalidades: [
         'Administración básica de cuentas y comercios con búsqueda por CUIT, nombre y otros datos',
@@ -843,6 +884,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'transporte-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'transporte-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/TRANSPORTE Y CARNET/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TRANSPORTE Y CARNET/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' }
+      ],
       funcionalidades: [
         'Administración integral de carnets de conducir con control de vencimientos',
         'Emisión y gestión de comprobantes con numeración automática vía talonarios',
@@ -898,6 +943,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'tys-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'tys-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'tys-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/TASAS Y SERVICIOS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TASAS Y SERVICIOS/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' },
+        { archivo: 'IMAGENES/TASAS Y SERVICIOS/Legajo de inmuebles-MOD.png', titulo: 'Legajo de Inmuebles' }
       ],
       funcionalidades: [
         'Administración de cuentas corrientes asociadas a inmuebles (adremas) y sus contribuyentes',
@@ -955,6 +1005,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'tys-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'tys-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/TASAS Y SERVICIOS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TASAS Y SERVICIOS/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' },
+        { archivo: 'IMAGENES/TASAS Y SERVICIOS/Legajo de inmuebles-MOD.png', titulo: 'Legajo de Inmuebles' }
+      ],
       funcionalidades: [
         'Administración de cuentas corrientes asociadas a inmuebles (adremas) y sus contribuyentes',
         'Generación automática y manual de cuotas anuales con configuración de fechas de vencimiento',
@@ -1010,6 +1065,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'alumbrado-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'alumbrado-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'alumbrado-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/TASA ALUMBRADO PUBLICO/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TASA ALUMBRADO PUBLICO/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' },
+        { archivo: 'IMAGENES/TASA ALUMBRADO PUBLICO/Legajo de inmuebles-MOD.png', titulo: 'Legajo de Inmuebles' }
       ],
       funcionalidades: [
         'Administración básica integral con búsqueda por CUIT y datos de cuenta',
@@ -1067,6 +1127,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'transporte-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'transporte-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/TRANSPORTE Y CARNET/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/TRANSPORTE Y CARNET/Legajo de contribuyente-MOD.png', titulo: 'Legajo de Contribuyente' }
+      ],
       funcionalidades: [
         'Administración integral de carnets de conducir con control de vencimientos',
         'Emisión y gestión de comprobantes con numeración automática vía talonarios',
@@ -1122,6 +1186,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'convenios-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'convenios-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'convenios-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/CONVENIOS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/CONVENIOS/Legajo de convenios-MOD.png', titulo: 'Legajo de Convenios' },
+        { archivo: 'IMAGENES/CONVENIOS/Legajo de juicios-MOD.png', titulo: 'Legajo de Juicios' }
       ],
       funcionalidades: [
         'Gestión completa de convenios administrativos y judiciales',
@@ -1179,6 +1248,11 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'ccv-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'ccv-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/CUENTAS CORRIENTES VARIAS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/CUENTAS CORRIENTES VARIAS/Legajo de cuenta-MOD.png', titulo: 'Legajo de Cuenta' },
+        { archivo: 'IMAGENES/CUENTAS CORRIENTES VARIAS/Legajo del contribuyente-MOD.png', titulo: 'Legajo del Contribuyente' }
+      ],
       funcionalidades: [
         'Gestión completa de cuentas corrientes con materiales, conceptos o valores monetarios',
         'Generación automática y manual de cuotas con cálculo de intereses',
@@ -1234,6 +1308,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'servicios-varios-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'servicios-varios-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'servicios-varios-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/SERVICIOS VARIOS/Legajo de comprobantes-MOD.png', titulo: 'Legajo de Comprobantes' },
+        { archivo: 'IMAGENES/SERVICIOS VARIOS/Legajo de contribuyentes-MOD.png', titulo: 'Legajo de Contribuyentes' }
       ],
       funcionalidades: [
         'Administración de servicios municipales diversos y especiales',
