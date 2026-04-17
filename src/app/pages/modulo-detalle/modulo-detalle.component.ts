@@ -295,6 +295,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'tesoreria-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'tesoreria-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/TESORERIA/Caja chica-MOD.jpeg', titulo: 'Caja Chica' },
+        { archivo: 'IMAGENES/TESORERIA/Pagos-MOD.png', titulo: 'Pagos' }
+      ],
       funcionalidades: [
         'Registro de cobros y pagos por día con control total de movimientos de caja',
         'Gestión de contribuyentes afectados y seguimiento de cuentas por cobrar',
@@ -350,6 +354,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'contabilidad-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'contabilidad-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'contabilidad-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/CONTABILIDAD/Asientos-MOD.png', titulo: 'Asientos Contables' },
+        { archivo: 'IMAGENES/CONTABILIDAD/Balance-MOD.png', titulo: 'Balance' }
       ],
       funcionalidades: [
         'Plan de cuentas configurable con estructura jerárquica y tipos de cuentas',
@@ -528,6 +536,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'compras-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'compras-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
+      capturas: [
+        { archivo: 'IMAGENES/COMPRAS/Ordenes de compra-MOD.png', titulo: 'Órdenes de Compra' },
+        { archivo: 'IMAGENES/COMPRAS/Ordenes de pago-MOD.png', titulo: 'Órdenes de Pago' }
+      ],
       funcionalidades: [
         'Gestión de Órdenes de Compra con agrupación de relaciones de pedido y control de estados',
         'Gestión de Órdenes de Pago con generación automática de vencimientos',
@@ -583,6 +595,10 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'obras-publicas-basica.png', titulo: 'Interfaz Básica' },
         { archivo: 'obras-publicas-intermedia.png', titulo: 'Interfaz Intermedia' },
         { archivo: 'obras-publicas-avanzada.png', titulo: 'Interfaz Avanzada' }
+      ],
+      capturas: [
+        { archivo: 'IMAGENES/OBRAS PÚBLICAS/Materiales-MOD.png', titulo: 'Materiales' },
+        { archivo: 'IMAGENES/OBRAS PÚBLICAS/Plan de obra-MOD.jpeg', titulo: 'Plan de Obra' }
       ],
       funcionalidades: [
         'Control completo de stock de materiales con alertas de reposición automática',
