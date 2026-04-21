@@ -296,7 +296,7 @@ export class ModuloDetalleComponent implements OnInit, OnDestroy {
         { archivo: 'tesoreria-avanzada.png', titulo: 'Interfaz Avanzada' }
       ],
       capturas: [
-        { archivo: 'IMAGENES/TESORERIA/Caja chica-MOD.jpeg', titulo: 'Caja Chica' },
+        { archivo: 'IMAGENES/TESORERIA/Caja-MOD.jpeg', titulo: 'Caja' },
         { archivo: 'IMAGENES/TESORERIA/Pagos-MOD.png', titulo: 'Pagos' }
       ],
       funcionalidades: [
